@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import BasicModal from "./Components/Modal/Modal";
+import PersonsLIst from "./Components/PersonsLIst";
+import "../src/App.css";
+import { Container } from "@mui/material";
+import PersonsData from "./Components/PersonData";
+import { useState } from "react";
+const App = function () {
+  const [state, setState] = useState(PersonsData);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="lg">
+      <div className="header">
+        <h1>User List</h1>
+        <BasicModal data={state} setData={setState} />
+      </div>
+      <PersonsLIst data={state} setData={setState}/>
+    </Container>
   );
-}
+};
 
 export default App;
