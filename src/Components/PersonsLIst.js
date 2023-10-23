@@ -37,7 +37,7 @@ function PersonsLIst({ data, setData }) {
       {data.map((item, index) => (
         <li
           key={index}
-          className={item.hovering ? "hover card" : "card"}
+          className={item.hovering ? "hover card" : "card "}
           onMouseOver={() => hoveringFunc(item.id)}
           onMouseOut={() => unhoveringFunc(item.id)}
         >
