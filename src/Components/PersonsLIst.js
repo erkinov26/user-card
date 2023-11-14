@@ -5,6 +5,8 @@ function PersonsLIst({ data, setData }) {
     const updatedItems = data.filter((item) => item !== itemToDelete);
     setData(updatedItems);
   };
+  // 
+  
 
   const hoveringFunc = (itemToHover) => {
     const infor = data.map((item) => {
